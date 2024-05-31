@@ -1,0 +1,15 @@
+/*Content*/
+.container {
+    display: flex; /* Use flexbox */
+}
+
+.words, .coverimage {
+    flex: 1; /* Distribute space equally */
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.coverimage img {
+    max-width: 90%; /* Ensure image doesn't exceed container */
+    height: auto; /* Maintain aspect ratio */
+}

@@ -1,0 +1,28 @@
+.project {
+    /*background-color: #588157;*/
+    background-color: white;
+    color: black;
+    text-align: center;
+    width: 25%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px; /* Adjust as needed */
+    padding: 20px; /* Add padding for spacing */
+    border-radius: 10px; /* Add rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
+    transition: transform 0.3s; /* Add smooth transition on hover */
+}
+  
+.project:hover {
+    transform: translateY(-5px); /* Move up slightly on hover */
+}
+  
+.project a {
+    color: black; /* Set link color */
+    text-decoration: none; /* Remove underline */
+    font-weight: bold; /* Make text bold */
+}
+  
+.project a:hover {
+    text-decoration: underline; /* Underline link on hover */
+}
