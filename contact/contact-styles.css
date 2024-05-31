@@ -1,0 +1,153 @@
+/*Social Media Cards*/
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+#cards {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  flex-wrap: wrap; /* Ensures cards wrap to next row if there isn't enough space */
+}
+.card {
+  width: calc(33.33% - 25px); /* Adjust as needed */
+  height: 350px;
+  background-color: rgba(255, 255, 255, 0.12);
+  border-radius: 10px;
+  position: relative;
+  margin-bottom: 50px;
+}
+#cards:hover > .card {
+  background: radial-gradient(
+      400px circle at 
+      var(--mouse-x) var(--mouse-y),
+      hsl(var(--color) / 1),
+      rgba(255, 255, 255, 0.12) 40%
+  );
+}
+.card-content {
+  position: absolute;
+  inset: 1px;
+  background-color: #131315;
+  border-radius: inherit;
+}
+.card:nth-child(1) {
+  --color: 348 80% 60%;
+}
+.card:nth-child(2) {
+  --color: 0 0% 100%;
+}
+.card:nth-child(3) {
+  --color: 220 100% 350%;
+}
+.card::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: radial-gradient(
+      500px circle at var(--mouse-x) var(--mouse-y), /* Removed space after var */
+      hsl(var(--color) / 0.35),
+      transparent 40%
+  );
+  border-radius: inherit;
+  opacity: 0;
+  z-index: 2;
+}
+#cards:hover > .card::before {
+  opacity: 1;
+}
+a {
+  all: unset;
+  cursor: pointer;
+}
+.card-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 18px;
+  align-items: center;
+}
+.card-content > i {
+  font-size: 10rem;
+  color: rgba(255, 255, 255, 0.5);
+}
+.card-content > p {
+  color: rgba(255, 255, 255, 0.5);
+}
+.card-content > a {
+  width: 90%;
+  padding-block: 0.8rem;
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 6px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  z-index: 10;
+}
+.card-content > a:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}  
+/* Form Styles */
+form {
+  max-width: 600px; /* Maximum width for the form */
+  margin: 0 auto; /* Center the form */
+  padding: 20px; /* Add some padding */
+  background-color: rgba(255, 255, 255, 0.1); /* Slightly transparent background to distinguish form */
+  border-radius: 8px; /* Rounded corners */
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #fff; /* Change label color to white */
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+  font-family: 'AuX DotBitC', sans-serif;
+  width: 100%; /* Full width of the form container */
+  max-width: 100%; /* Ensure input fields do not exceed form width */
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.5); /* Adjust border color to blend with dark theme */
+  border-radius: 4px;
+  box-sizing: border-box;
+  background-color: white; /* Dark background for input fields */
+  color: #fff; /* Light text color */
+}
+input[type="text"]::placeholder,
+input[type="email"]::placeholder,
+textarea::placeholder {
+  color: black; /* Placeholder color */
+}
+
+button[type="submit"] {
+  font-family: 'AuX DotBitC', sans-serif;
+  background-color: #1B4F0D; /* Match button background with navbar */
+  color: black; /* Light text color */
+  padding: 15px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  width: 100%; /* Make the button full width of the form */
+  max-width: 100%; /* Ensure button does not exceed form width */
+}
+
+button[type="submit"]:hover {
+  font-family: 'AuX DotBitC', sans-serif;
+  background-color: #45a049; /* Slightly lighter green for hover effect */
+  color: black;
+}
